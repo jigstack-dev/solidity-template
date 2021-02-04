@@ -22,6 +22,7 @@ jobs:
         upstream_repository: paulrberg/solidity-template
         upstream_branch: main
         target_branch: main
+        git_pull_args: --ff-only
 
     - name: Timestamp
       run: date
