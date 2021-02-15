@@ -21,7 +21,7 @@ jobs:
       with:
         upstream_repository: paulrberg/solidity-template
         upstream_branch: main
-        target_branch: main
+        target_branch: synced-fork
         git_pull_args: --allow-unrelated-histories
 
     - name: Timestamp
