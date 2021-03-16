@@ -21,7 +21,7 @@ jobs:
       with:
         upstream_repository: paulrberg/solidity-template
         upstream_branch: main
-        target_branch: synced-fork
+        target_branch: main
         git_pull_args: --unshallow
 
     - name: Timestamp
