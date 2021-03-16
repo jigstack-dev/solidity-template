@@ -22,7 +22,7 @@ jobs:
         upstream_repository: paulrberg/solidity-template
         upstream_branch: main
         target_branch: synced-fork
-        git_pull_args: --allow-unrelated-histories
+        git_pull_args: --unshallow
 
     - name: Timestamp
       run: date
