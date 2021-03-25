@@ -1,13 +1,15 @@
 import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "solidity-coverage";
+
 import "./tasks/accounts";
 import "./tasks/clean";
 
+import { resolve } from "path";
+
+import { config as dotenvConfig } from "dotenv";
 import { HardhatUserConfig } from "hardhat/config";
 import { NetworkUserConfig } from "hardhat/types";
-import { config as dotenvConfig } from "dotenv";
-import { resolve } from "path";
 
 dotenvConfig({ path: resolve(__dirname, "./.env") });
 
@@ -73,6 +75,12 @@ const config: HardhatUserConfig = {
   solidity: {
     version: "0.8.1",
     settings: {
+      metadata: {
+        // Do not include the metadata hash, since this is machine dependent and we want
+        // all generated code to be deterministic.
+        // https://docs.soliditylang.org/en/v0.7.6/metadata.html
+        bytecodeHash: "none",
+      },
       // https://hardhat.org/hardhat-network/#solidity-optimizer-support
       optimizer: {
         enabled: true,
