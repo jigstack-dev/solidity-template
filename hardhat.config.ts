@@ -73,14 +73,14 @@ const config: HardhatUserConfig = {
     tests: "./test",
   },
   solidity: {
-    version: "0.8.1",
+    version: "0.8.3",
     settings: {
       metadata: {
-        // Do not include the metadata hash, since this is machine dependent and we want
-        // all generated code to be deterministic.
-        // https://docs.soliditylang.org/en/v0.7.6/metadata.html
+        // Not including the metadata hash
+        // https://github.com/paulrberg/solidity-template/issues/31
         bytecodeHash: "none",
       },
+      // You should disable the optimizer when debugging
       // https://hardhat.org/hardhat-network/#solidity-optimizer-support
       optimizer: {
         enabled: true,
